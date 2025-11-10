@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 2025 Ad-Tech Competitive Landscape</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f6;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .material-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 24px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .material-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .text-accent-green { color: #00F0B5; }
+        .text-accent-blue { color: #0075FF; }
+        .bg-accent-green { background-color: #00F0B5; }
+        .bg-accent-blue { background-color: #0075FF; }
+        .bg-accent-teal { background-color: #00E0D2; }
+        .bg-accent-light-blue { background-color: #00C4FF; }
+        .bg-accent-mid-blue { background-color: #00A2FF; }
+
+        .stat-card {
+            background: linear-gradient(135deg, #0075FF 0%, #00A2FF 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .flow-diagram-arrow {
+            font-size: 2rem;
+            color: #00A2FF;
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <main class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-accent-blue mb-2">The Great Divide</h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-700">Ad-Tech Competitive Landscape: Q3 2025</h2>
+        </header>
+
+        <section id="performance" class="mb-12">
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8">
+                Q3 2025 was a story of divergence. The market clearly separated leaders from the pack, with performance driven by focused strategies in AI, Connected TV (CTV), and Retail Media. Top performers like The Trade Desk and Taboola delivered strong, double-digit growth, while competitors facing integration challenges or market headwinds showed declines.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="material-card">
+                    <h3 class="text-xl font-bold mb-4 text-center">Q3 Revenue by Company ($M)</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">The Trade Desk and Taboola maintain a significant scale advantage over other independent players.</p>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <h3 class="text-xl font-bold mb-4 text-center">Q3 Revenue Growth (YoY %)</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">A clear split in performance: TTD, TBLA, and MGNI show strong growth, while PUBM and NEXN face forecasted declines.</p>
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-4">The New Battlegrounds: Where Growth is Won</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8">
+                Success this quarter was not uniform; it was concentrated in specific, high-growth sectors. Companies with a clear focus on Retail Media and CTV, or a strong AI-driven platform, outperformed significantly.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div class="material-card">
+                    <h3 class="text-xl font-bold mb-4 text-center">Criteo's Retail Media Pivot</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Criteo's strategy is paying off, with its Retail Media segment (+11% ex-TAC growth) now the primary engine, offsetting its legacy business.</p>
+                    <div class="chart-container h-80 max-h-80">
+                        <canvas id="criteoChart"></canvas>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <h3 class="text-xl font-bold mb-4 text-center">Magnite's CTV Core</h3>
+                    <p class="text-gray-600 text-center text-sm mb-4">Magnite's focus is clear: CTV is its core business, accounting for 45% of its ex-TAC contribution and growing 18% YoY.</p>
+                    <div class="chart-container h-80 max-h-80">
+                        <canvas id="magniteChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-center mb-6 mt-12">Strategic Moats: The Source of Competitive Advantage</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="material-card text-center">
+                    <span class="text-5xl" role="img" aria-label="link">🔗</span>
+                    <h4 class="text-lg font-bold mt-2">The Trade Desk</h4>
+                    <p class="text-sm text-gray-600">Dominant DSP scale combined with its **UID2** identity solution and **Kokai AI** platform, creating a powerful buy-side lock-in.</p>
+                </div>
+                
+                <div class="material-card text-center">
+                    <span class="text-5xl" role="img" aria-label="newspaper">📰</span>
+                    <h4 class="text-lg font-bold mt-2">Taboola</h4>
+                    <p class="text-sm text-gray-600">Exclusive, long-term contracts with the world's **premium publishers**, providing a massive 1st-party data and inventory moat.</p>
+                </div>
+                
+                <div class="material-card text-center">
+                    <span class="text-5xl" role="img" aria-label="shopping-cart">🛒</span>
+                    <h4 class="text-lg font-bold mt-2">Criteo</h4>
+                    <p class="text-sm text-gray-600">Deep, technical integrations with a growing network of the **world's largest retailers** to power their on-site ad business.</p>
+                </div>
+
+                <div class="material-card text-center">
+                    <span class="text-5xl" role="img" aria-label="tv">📺</span>
+                    <h4 class="text-lg font-bold mt-2">Magnite</h4>
+                    <p class="text-sm text-gray-600">The leading independent SSP with deep integrations into **premium CTV publishers** like Netflix, Roku, and WBD.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="taboola" class="mb-12 bg-white rounded-lg p-8 shadow-lg border-t-4 border-accent-green">
+            <h2 class="text-3xl font-bold text-center mb-4">Your Position: Taboola (TBLA) Q3 Scorecard</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8">
+                This was a standout quarter for us, significantly beating expectations and demonstrating strong execution. Our core business is healthy, and our strategic initiatives are expanding our competitive advantage.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="stat-card">
+                    <div class="text-5xl font-bold">$496.8M</div>
+                    <div class="text-lg font-semibold mt-1">Q3 Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-5xl font-bold">+15%</div>
+                    <div class="text-lg font-semibold mt-1">Year-over-Year Growth</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-5xl font-bold">+1276%</div>
+                    <div class="text-lg font-semibold mt-1">EPS Surprise vs. Forecast</div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-center mb-6">Our X-Factor: Expanding the Moat</h3>
+            <div class="flex flex-col md:flex-row items-center justify-center text-center p-4">
+                <div class="material-card m-2 flex-1">
+                    <span class="text-4xl" role="img" aria-label="newspaper">📰</span>
+                    <h4 class="text-lg font-bold">Core Business</h4>
+                    <p class="text-sm text-gray-600">Publisher Network</p>
+                </div>
+                <div class="flow-diagram-arrow hidden md:block">→</div>
+                <div class="material-card m-2 flex-1 bg-accent-green text-black">
+                    <span class="text-4xl" role="img" aria-label="rocket">🚀</span>
+                    <h4 class="text-lg font-bold">New Initiative</h4>
+                    <p class="text-sm">"Realize" AI Platform</p>
+                </div>
+                <div class="flow-diagram-arrow hidden md:block">→</div>
+                <div class="material-card m-2 flex-1">
+                    <span class="text-4xl" role="img" aria-label="tv">📺</span>
+                    <h4 class="text-lg font-bold">New Frontier</h4>
+                    <p class="text-sm text-gray-600">Paramount CTV Partnership</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="watchlist" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-4">Competitor Watchlist: Headwinds & Big Moves</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8">
+                Not all competitors thrived. The Outbrain/Teads merger is facing challenges, and Pubmatic faces a difficult forecast. Meanwhile, Nexxen made a critical long-term data play.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="material-card">
+                    <h3 class="text-xl font-bold mb-2">Outbrain (Teads)</h3>
+                    <p class="text-lg font-semibold text-red-500 mb-2">Integration Headwinds</p>
+                    <p class="text-gray-600 text-sm mb-4">The newly merged entity reported Q3 results that "fell short of expectations" due to integration complexity.</p>
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <span class="font-bold text-accent-green">Bright Spot:</span>
+                        <p class="text-gray-700">Their standalone CTV business is a key growth area, up ~40% YoY.</p>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <h3 class="text-xl font-bold mb-2">Pubmatic (PUBM)</h3>
+                    <p class="text-lg font-semibold text-red-500 mb-2">Facing Headwinds</p>
+                    <p class="text-gray-600 text-sm mb-4">Analysts forecast a challenging quarter (reports Nov 10) with a potential revenue decline of ~10.8% YoY.</p>
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <span class="font-bold text-accent-blue">Stated Reason:</span>
+                        <p class="text-gray-700">A "DSP reset" as key partners change their buying behavior, creating near-term disruption.</p>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <h3 class="text-xl font-bold mb-2">Nexxen (NEXN)</h3>
+                    <p class="text-lg font-semibold text-accent-blue mb-2">The Long-Term Data Play</p>
+                    <p class="text-gray-600 text-sm mb-4">While Q3 forecasts are soft (reports Nov 13), Nexxen made a critical strategic move this quarter.</p>
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <span class="font-bold text-accent-mid-blue">Key Q3 News:</span>
+                        <p class="text-gray-700">Renewed & expanded its exclusive data partnership with TV maker **VIDAA** (Hisense).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-300">
+            <p class="text-sm text-gray-500">Q3 2025 Ad-Tech Competitive Analysis. For internal informational purposes only.</p>
+        </footer>
+    </main>
+
+    <script>
+        (function() {
+            const chartColors = {
+                green: '#00F0B5',
+                teal: '#00E0D2',
+                lightBlue: '#00C4FF',
+                midBlue: '#00A2FF',
+                darkBlue: '#0075FF',
+                gray: '#cbd5e1'
+            };
+
+            const labelWrapper = (label, maxChars = 16) => {
+                if (label.length <= maxChars) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxChars) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const mandatoryTooltipCallback = {
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const renderRevenueChart = () => {
+                const ctx = document.getElementById('revenueChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            'TTD', 
+                            'TBLA', 
+                            'CRTO', 
+                            'MGNI', 
+                            labelWrapper('NEXN (Forecast)'), 
+                            labelWrapper('PUBM (Forecast)')
+                        ],
+                        datasets: [{
+                            label: 'Q3 2025 Revenue ($M)',
+                            data: [739, 496.8, 470, 179.5, 91.3, 64],
+                            backgroundColor: [
+                                chartColors.darkBlue,
+                                chartColors.green,
+                                chartColors.midBlue,
+                                chartColors.lightBlue,
+                                chartColors.gray,
+                                chartColors.gray
+                            ],
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        ...mandatoryTooltipCallback,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    drawBorder: false,
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false,
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            const renderGrowthChart = () => {
+                const ctx = document.getElementById('growthChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            'TTD', 
+                            'TBLA', 
+                            'MGNI', 
+                            'CRTO', 
+                            labelWrapper('PUBM (Forecast)'), 
+                            labelWrapper('NEXN (Forecast)')
+                        ],
+                        datasets: [{
+                            label: 'Q3 2025 Revenue Growth (YoY %)',
+                            data: [18, 15, 11, 2, -10.8, -16.4],
+                            backgroundColor: [
+                                chartColors.darkBlue,
+                                chartColors.green,
+                                chartColors.lightBlue,
+                                chartColors.midBlue,
+                                '#ef4444', 
+                                '#ef4444' 
+                            ],
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        ...mandatoryTooltipCallback,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                grid: {
+                                    drawBorder: false,
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    }
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false,
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            const renderCriteoChart = () => {
+                const ctx = document.getElementById('criteoChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Retail Media (Growth Engine)', 'Performance Media (Legacy)'],
+                        datasets: [{
+                            label: 'Criteo Focus',
+                            data: [60, 40],
+                            backgroundColor: [
+                                chartColors.midBlue,
+                                chartColors.gray
+                            ],
+                            borderColor: '#ffffff',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        ...mandatoryTooltipCallback,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                    }
+                });
+            };
+
+            const renderMagniteChart = () => {
+                const ctx = document.getElementById('magniteChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Connected TV (CTV)', 'Other (DV+, etc.)'],
+                        datasets: [{
+                            label: '% of Contribution ex-TAC',
+                            data: [45, 55],
+                            backgroundColor: [
+                                chartColors.lightBlue,
+                                chartColors.gray
+                            ],
+                            borderColor: '#ffffff',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        ...mandatoryTooltipCallback,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                    }
+                });
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                renderRevenueChart();
+                renderGrowthChart();
+                renderCriteoChart();
+                renderMagniteChart();
+            });
+        })();
+    </script>
+</body>
+</html>
